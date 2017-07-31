@@ -1,14 +1,9 @@
 package com.example.administrator.emchat_test;
 
-import android.app.ActivityManager;
 import android.app.Application;
-import android.util.Log;
 
 import com.hyphenate.chat.EMClient;
-import com.hyphenate.chat.EMOptions;
-
-import java.util.Iterator;
-import java.util.List;
+import com.hyphenate.easeui.EaseUI;
 
 /**
  * @author yang.jianan 2017/07/27 11:22. Email:yang.jianan0926@gmail.com
@@ -21,10 +16,13 @@ public class ECApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        initEaseMob();
+//        initEaseMob();
+
+        EaseUI.getInstance().init(this, null);
+        EMClient.getInstance().setDebugMode(BuildConfig.DEBUG);
     }
 
-    private void initEaseMob() {
+    /*private void initEaseMob() {
         EMOptions options = new EMOptions();
         // 默认添加好友时，是不需要验证的，改成需要验证
         options.setAcceptInvitationAlways(false);
@@ -66,5 +64,5 @@ public class ECApplication extends Application {
             }
         }
         return processName;
-    }
+    }*/
 }

@@ -73,7 +73,7 @@ public class ECLoginActivity extends AppCompatActivity {
             @Override
             public void onSuccess() {
                 toastOnUiThread("登陆成功");
-                startActivity(new Intent(ECLoginActivity.this,ChatActivity.class));
+                startActivity(new Intent(ECLoginActivity.this, ECMainActivity.class));
             }
 
             @Override
